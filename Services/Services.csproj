@@ -5,10 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="ViewModels\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\DAL.SQL\DAL.SQL.csproj" />
     <ProjectReference Include="..\Transport\Transport.csproj" />
   </ItemGroup>
