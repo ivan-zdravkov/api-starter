@@ -7,8 +7,7 @@ using System.Threading.Tasks;
 
 namespace DAL.SQL.Entities
 {
-    public class StudentEntity : StudentModel, IBaseEntity
+    public interface IBaseEntity : IBaseModel
     {
-        public List<ClassEntity> Classes { get; set; }
     }
 }

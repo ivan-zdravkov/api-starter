@@ -1,4 +1,5 @@
 using DAL.SQL;
+using DAL.SQL.Repositories;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
@@ -41,7 +42,8 @@ namespace Web
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Web", Version = "v1" });
             });
 
-            services.AddDbContext<DbContext, Context>(options => options.UseSqlServer(Configuration.GetConnectionString("LocalDB")));
+            services.AddDbContext<Context, Context>(options => options.UseSqlServer(Configuration.GetConnectionString("LocalDB")));
+            services.AddScoped<IClassRepository, ClassRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
